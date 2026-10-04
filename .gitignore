@@ -42,3 +42,9 @@ next-env.d.ts
 /Walkthrough/archive/
 /recordings/raw/
 /recordings/*.webm
+
+# Local walkthrough recordings (do not commit)
+/recordings/
+/Walkthrough/*.mp4
+/Walkthrough/archive/
+*.webm

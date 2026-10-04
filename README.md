@@ -27,14 +27,14 @@ Control Room → Economic Signals → Event Analysis → Capability → Worker �
 
 ## iOS worker app
 
-Open `SANKET.xcodeproj` in Xcode (iOS 17+ simulator).
+The worker-facing iOS app lives in a separate repository:
 
-```bash
-# regenerate project if needed
-xcodegen generate
-```
+https://github.com/SukhvirKooner/sanket-worker-ios
+
 
 ## Record a walkthrough
+
+Recordings stay on your machine (gitignored) and are not published to GitHub.
 
 **Web** (app running locally):
 
@@ -42,7 +42,7 @@ xcodegen generate
 npm run record:walkthrough
 ```
 
-Output: `recordings/sanket-walkthrough.mp4`
+Writes `recordings/sanket-walkthrough.mp4` locally.
 
 **iOS** (simulator booted):
 
@@ -50,4 +50,4 @@ Output: `recordings/sanket-walkthrough.mp4`
 python3 record_walkthrough.py
 ```
 
-Output: `Walkthrough/SANKET_Walkthrough.mp4`
+Writes `Walkthrough/SANKET_Walkthrough.mp4` locally.
