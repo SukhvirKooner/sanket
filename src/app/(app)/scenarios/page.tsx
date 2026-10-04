@@ -38,7 +38,7 @@ const defaultParams: ScenarioParams = {
 
 export default function ScenariosPage() {
   const completeStep = useAppStore((s) => s.completeStep);
-  const advanceDemo = useAppStore((s) => s.advanceDemo);
+  const advanceTour = useAppStore((s) => s.advanceTour);
   const saveScenario = useAppStore((s) => s.saveScenario);
   const saved = useAppStore((s) => s.savedScenarios);
   const addAudit = useAppStore((s) => s.addAudit);
@@ -87,7 +87,7 @@ export default function ScenariosPage() {
             openEvidence({
               title: "Why these scenario outcomes?",
               evidence: defaultEvidence,
-              assumptions: ["Deterministic demo formula", "Base case = Semiconductor Gujarat plan"],
+              assumptions: ["Deterministic scenario formula", "Base case = Semiconductor Gujarat plan"],
               confidence: 70,
               model: modelVersion,
               timestamp: nowISO(),
@@ -202,7 +202,7 @@ export default function ScenariosPage() {
                 const r = runScenario(params);
                 setResult(r);
                 completeStep("scenario");
-                advanceDemo();
+                advanceTour();
                 addAudit({
                   action: "Scenario run",
                   detail: `Demand ${params.demandPct}%, delay ${params.delayMonths}m, capacity ${params.capacityPct}%`,
@@ -223,7 +223,7 @@ export default function ScenariosPage() {
           <CardContent>
             {!result ? (
               <p className="text-sm text-slate-500">
-                Adjust controls and run a scenario. Use &quot;Stress test (demo table)&quot; for the
+                Adjust controls and run a scenario. Use &quot;Stress test (reference table)&quot; for the
                 judging example (delay +6, demand −10%, capacity −15%, migration +5%).
               </p>
             ) : (

@@ -2,7 +2,7 @@
 
 import { Bell, ChevronDown, Compass, LogOut, User } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { useAppStore, DEMO_STEPS } from "@/store/useAppStore";
+import { useAppStore, TOUR_STEPS } from "@/store/useAppStore";
 import { t } from "@/lib/i18n";
 import { ROLE_LABELS } from "@/lib/roles";
 import type { Role } from "@/types";
@@ -24,16 +24,16 @@ export function Header() {
   const locale = useAppStore((s) => s.locale);
   const setLocale = useAppStore((s) => s.setLocale);
   const modelVersion = useAppStore((s) => s.modelVersion);
-  const guidedDemo = useAppStore((s) => s.guidedDemo);
-  const setGuidedDemo = useAppStore((s) => s.setGuidedDemo);
-  const demoStep = useAppStore((s) => s.demoStep);
+  const guidedTour = useAppStore((s) => s.guidedTour);
+  const setGuidedTour = useAppStore((s) => s.setGuidedTour);
+  const tourStep = useAppStore((s) => s.tourStep);
   const notifications = useAppStore((s) => s.notifications);
   const markRead = useAppStore((s) => s.markNotificationsRead);
   const switchRole = useAppStore((s) => s.switchRole);
   const logout = useAppStore((s) => s.logout);
 
   const unread = notifications.filter((n) => !n.read).length;
-  const coach = DEMO_STEPS[demoStep];
+  const coach = TOUR_STEPS[tourStep];
 
   return (
     <header className="relative z-40 border-b border-slate-200 bg-white">
@@ -68,8 +68,8 @@ export function Header() {
 
           <div className="hidden items-center gap-2 rounded-md border border-slate-200 px-2 py-1 lg:flex">
             <Compass className="h-3.5 w-3.5 text-saffron" />
-            <span className="text-xs text-slate-600">{t("guidedDemo", locale)}</span>
-            <Switch checked={guidedDemo} onCheckedChange={setGuidedDemo} aria-label="Guided demo" />
+            <span className="text-xs text-slate-600">{t("guidedTour", locale)}</span>
+            <Switch checked={guidedTour} onCheckedChange={setGuidedTour} aria-label="Guided tour" />
           </div>
 
           <DropdownMenu>
@@ -144,11 +144,11 @@ export function Header() {
         <div className="flex-1 bg-india-green" />
       </div>
 
-      {guidedDemo && coach && (
+      {guidedTour && coach && (
         <div className="border-b border-saffron/40 bg-saffron/10 px-4 py-2">
           <div className="flex flex-wrap items-center justify-between gap-2 text-xs">
             <p className="font-medium text-navy-900">
-              <span className="text-saffron-dark">Demo step {demoStep + 1}/{DEMO_STEPS.length}:</span>{" "}
+              <span className="text-saffron-dark">Tour step {tourStep + 1}/{TOUR_STEPS.length}:</span>{" "}
               {coach.title} — {coach.hint}
             </p>
             <Link href={coach.href} className="font-semibold text-navy-800 underline">

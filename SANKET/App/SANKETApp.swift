@@ -12,10 +12,10 @@ struct SANKETApp: App {
                 .environment(\.appLanguage, appState.language)
                 .tint(SANKETTheme.accent)
                 .onAppear {
-                    appState.applyLaunchDemoStageIfNeeded()
+                    appState.applyLaunchJourneyStageIfNeeded()
                 }
                 .onOpenURL { url in
-                    appState.handleDemoURL(url)
+                    appState.handleJourneyURL(url)
                 }
         }
     }

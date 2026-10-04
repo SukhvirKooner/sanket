@@ -20,7 +20,7 @@ export default function ApprovalsPage() {
   const plans = useAppStore((s) => s.plans);
   const updatePlan = useAppStore((s) => s.updatePlan);
   const completeStep = useAppStore((s) => s.completeStep);
-  const advanceDemo = useAppStore((s) => s.advanceDemo);
+  const advanceTour = useAppStore((s) => s.advanceTour);
   const addAudit = useAppStore((s) => s.addAudit);
   const modelVersion = useAppStore((s) => s.modelVersion);
 
@@ -97,7 +97,7 @@ export default function ApprovalsPage() {
     }
 
     completeStep("approval");
-    advanceDemo();
+    advanceTour();
     setConfirm(null);
     setMode("none");
     router.push("/implementation");

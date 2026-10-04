@@ -3,7 +3,7 @@ import SwiftUI
 struct HomeView: View {
     @Environment(AppState.self) private var appState
     @Binding var selectedTab: MainTabView.Tab
-    @State private var showDemoControls = false
+    @State private var showPresenterControls = false
     @State private var showOutcome = false
 
     var body: some View {
@@ -67,7 +67,7 @@ struct HomeView: View {
                 Text(String(localized: "app_name"))
                     .font(.headline)
                     .onLongPressGesture(minimumDuration: 0.6) {
-                        showDemoControls = true
+                        showPresenterControls = true
                     }
             }
             ToolbarItem(placement: .topBarTrailing) {
@@ -85,8 +85,8 @@ struct HomeView: View {
                 ProfileView()
             }
         }
-        .sheet(isPresented: $showDemoControls) {
-            DemoControlsView()
+        .sheet(isPresented: $showPresenterControls) {
+            PresenterControlsView()
         }
         .navigationDestination(isPresented: $showOutcome) {
             WorkforceOutcomeView()

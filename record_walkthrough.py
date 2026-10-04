@@ -2,7 +2,7 @@
 """
 Walkthrough recording of SANKET Worker.
 
-Important: never opens the Demo Controls sheet. Stage changes use silent
+Important: never opens the Presenter controls sheet. Stage changes use silent
 URL hooks (sanket://…) so presenters' hidden controls stay off-camera.
 """
 
@@ -17,7 +17,7 @@ from pathlib import Path
 
 UDID = "96328A7C-9DEE-4427-8F71-BFEEFD9BF89E"
 BUNDLE = "com.sanket.worker"
-OUT = Path("/Users/sukhvirsingh/webdev/SANKET/Demo/SANKET_Walkthrough.mp4")
+OUT = Path("/Users/sukhvirsingh/webdev/SANKET/Walkthrough/SANKET_Walkthrough.mp4")
 
 TABS = {
     "home": (40, 815),
@@ -123,17 +123,17 @@ def back() -> None:
 
 
 def silent_stage(stage: str) -> None:
-    """Jump stage with no Demo Controls UI (relaunch + launch arg)."""
+    """Jump stage with no Presenter controls UI (relaunch + launch arg)."""
     print(f"silent stage → {stage}", flush=True)
     run(["xcrun", "simctl", "terminate", UDID, BUNDLE], check=False)
     sleep(0.35)
-    run(["xcrun", "simctl", "launch", UDID, BUNDLE, "-DemoStage", stage], check=False)
+    run(["xcrun", "simctl", "launch", UDID, BUNDLE, "-JourneyStage", stage], check=False)
     sleep(1.8, f"relaunch at {stage}")
     idb("focus", check=False)
 
 
 def show_sample_applications() -> None:
-    """Load multi-status applications without opening Demo Controls."""
+    """Load multi-status applications without opening Presenter controls."""
     silent_stage("applied")
 
 
@@ -181,7 +181,7 @@ def walkthrough() -> None:
         sleep(0.65)
     sleep(1.8, "home")
 
-    # 2) Home overview (no demo sheet)
+    # 2) Home overview (no presenter sheet)
     section("2 Home")
     sleep(1.6, "next best action + stats")
     swipe_up()
@@ -286,7 +286,7 @@ def walkthrough() -> None:
         if has("continue training"):
             tap("Continue Training")
             sleep(1.0)
-    # Move to week-3 state without showing demo sheet
+    # Move to week-3 state without showing presenter sheet
     if not has("bms") and not has("52%"):
         silent_stage("trainingInProgress")
         tab("training")
@@ -310,7 +310,7 @@ def walkthrough() -> None:
     else:
         silent_stage("certified")
 
-    # 7) Jobs — natural apply; silent advance for tracker (no demo sheet)
+    # 7) Jobs — natural apply; silent advance for tracker (no presenter sheet)
     section("7 Jobs")
     tab("home")
     sleep(1.2, "certified home card")
@@ -330,7 +330,7 @@ def walkthrough() -> None:
     sleep(1.6, "application tracker")
     swipe_up()
     sleep(0.9)
-    # Show applications at several statuses (silent; no demo sheet)
+    # Show applications at several statuses (silent; no presenter sheet)
     show_sample_applications()
     tab("jobs")
     tap_xy(282, 150, wait=1.1, note="Applications")
@@ -375,7 +375,7 @@ def walkthrough() -> None:
 
 def main() -> int:
     print(f"Recording → {OUT}", flush=True)
-    print("Demo Controls sheet will NOT be opened.", flush=True)
+    print("Presenter controls sheet will NOT be opened.", flush=True)
     run(["open", "-a", "Simulator"], check=False)
     run(["osascript", "-e", 'tell application "Simulator" to activate'], check=False)
     sleep(0.8)

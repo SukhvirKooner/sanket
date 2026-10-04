@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "demo:record": "node scripts/record-demo.mjs"
+    "record:walkthrough": "node scripts/record-walkthrough.mjs"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.2.6",

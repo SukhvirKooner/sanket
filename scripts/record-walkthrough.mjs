@@ -1,7 +1,7 @@
 /**
  * SANKET product walkthrough recorder — no overlays/callouts.
  * Looks like a real user using the app.
- * Outputs: demos/sanket-walkthrough.webm + .mp4
+ * Outputs: recordings/sanket-walkthrough.webm + .mp4
  */
 import { chromium } from "playwright";
 import {
@@ -17,7 +17,7 @@ import { join } from "path";
 import { execSync } from "child_process";
 
 const BASE = process.env.SANKET_URL || "http://localhost:3000";
-const OUT = join(process.cwd(), "demos");
+const OUT = join(process.cwd(), "recordings");
 const RAW = join(OUT, "raw");
 
 if (existsSync(RAW)) rmSync(RAW, { recursive: true, force: true });
@@ -62,15 +62,15 @@ async function ensureAuth(page) {
   await page.evaluate(() => {
     let prev = {};
     try {
-      prev = JSON.parse(localStorage.getItem("sanket-demo-store") || "{}").state || {};
+      prev = JSON.parse(localStorage.getItem("sanket-app-store") || "{}").state || {};
     } catch {}
     localStorage.setItem(
-      "sanket-demo-store",
+      "sanket-app-store",
       JSON.stringify({
         state: {
           ...prev,
           isAuthenticated: true,
-          guidedDemo: false,
+          guidedTour: false,
           user: prev.user || {
             id: "user-government_planner",
             name: "Ananya Sharma",
@@ -87,9 +87,9 @@ async function ensureAuth(page) {
 
 async function setRole(page, user) {
   await page.evaluate((user) => {
-    const raw = JSON.parse(localStorage.getItem("sanket-demo-store") || "{}");
-    raw.state = { ...(raw.state || {}), isAuthenticated: true, guidedDemo: false, user };
-    localStorage.setItem("sanket-demo-store", JSON.stringify(raw));
+    const raw = JSON.parse(localStorage.getItem("sanket-app-store") || "{}");
+    raw.state = { ...(raw.state || {}), isAuthenticated: true, guidedTour: false, user };
+    localStorage.setItem("sanket-app-store", JSON.stringify(raw));
   }, user);
 }
 
@@ -105,7 +105,7 @@ async function navSidebar(page, name) {
 }
 
 async function main() {
-  console.log("Recording natural SANKET walkthrough against", BASE);
+  console.log("Recording SANKET walkthrough against", BASE);
 
   const browser = await chromium.launch({
     headless: true,
@@ -129,7 +129,7 @@ async function main() {
     await page.reload({ waitUntil: "networkidle" });
     await sleep(1500);
 
-    // Login as planner via quick demo button (real UI)
+    // Login as planner via quick login button (real UI)
     await clickFirst(page, page.getByRole("button", { name: /Government Planner/i }), "login");
     await page.waitForURL("**/control-room**", { timeout: 20000 }).catch(() => {});
     await sleep(1200);

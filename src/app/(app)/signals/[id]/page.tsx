@@ -32,7 +32,7 @@ export default function EventAnalysisPage() {
   const openEvidence = useAppStore((s) => s.openEvidence);
   const modelVersion = useAppStore((s) => s.modelVersion);
   const completeStep = useAppStore((s) => s.completeStep);
-  const advanceDemo = useAppStore((s) => s.advanceDemo);
+  const advanceTour = useAppStore((s) => s.advanceTour);
   const addAudit = useAppStore((s) => s.addAudit);
 
   const [loading, setLoading] = useState(true);
@@ -182,7 +182,7 @@ export default function EventAnalysisPage() {
           variant="saffron"
           onClick={() => {
             completeStep("capability");
-            advanceDemo();
+            advanceTour();
             router.push("/capability");
           }}
         >

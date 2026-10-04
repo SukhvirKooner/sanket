@@ -86,7 +86,7 @@ struct ProfileView: View {
             }
 
             Section {
-                Text(String(localized: "demo_data_label"))
+                Text(String(localized: "sample_data_label"))
                     .font(.caption)
                     .foregroundStyle(.secondary)
                     .frame(maxWidth: .infinity, alignment: .center)

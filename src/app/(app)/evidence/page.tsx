@@ -87,7 +87,7 @@ export default function EvidencePage() {
           <CardContent className="space-y-2">
             {recommendations.length === 0 && (
               <p className="text-sm text-slate-500">
-                No recommendations yet — walk the demo journey to populate this log.
+                No recommendations yet — walk the planner journey to populate this log.
               </p>
             )}
             {recommendations.map((a) => (

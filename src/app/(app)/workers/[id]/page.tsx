@@ -22,7 +22,7 @@ export default function WorkerProfilePage() {
   const revealed = useAppStore((s) => s.revealedWorkers);
   const revealWorker = useAppStore((s) => s.revealWorker);
   const addAudit = useAppStore((s) => s.addAudit);
-  const advanceDemo = useAppStore((s) => s.advanceDemo);
+  const advanceTour = useAppStore((s) => s.advanceTour);
 
   const [loading, setLoading] = useState(true);
   const [worker, setWorker] = useState<Worker | null>(null);
@@ -218,7 +218,7 @@ export default function WorkerProfilePage() {
               variant="saffron"
               size="sm"
               onClick={() => {
-                advanceDemo();
+                advanceTour();
                 router.push(`/transformation?from=${encodeURIComponent(worker.occupation)}&to=${encodeURIComponent(opt)}`);
               }}
             >

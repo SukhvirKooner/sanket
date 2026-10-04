@@ -32,7 +32,7 @@ const RECAL_STEPS = [
 
 export default function OutcomesPage() {
   const completeStep = useAppStore((s) => s.completeStep);
-  const advanceDemo = useAppStore((s) => s.advanceDemo);
+  const advanceTour = useAppStore((s) => s.advanceTour);
   const setModelVersion = useAppStore((s) => s.setModelVersion);
   const modelVersion = useAppStore((s) => s.modelVersion);
   const addAudit = useAppStore((s) => s.addAudit);
@@ -59,7 +59,7 @@ export default function OutcomesPage() {
           onComplete={() => {
             setModelVersion("Demand Model v0.5");
             completeStep("recalibration");
-            advanceDemo();
+            advanceTour();
             addAudit({
               action: "Forecast recalibrated",
               detail: "Demand Model v0.4 → v0.5",

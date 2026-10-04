@@ -20,7 +20,7 @@ export default function ControlRoomPage() {
   const locale = useAppStore((s) => s.locale);
   const plans = useAppStore((s) => s.plans);
   const completeStep = useAppStore((s) => s.completeStep);
-  const advanceDemo = useAppStore((s) => s.advanceDemo);
+  const advanceTour = useAppStore((s) => s.advanceTour);
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState<Awaited<ReturnType<typeof api.getControlRoom>> | null>(null);
   const [selectedState, setSelectedState] = useState<string | null>("Gujarat");
@@ -171,7 +171,7 @@ export default function ControlRoomPage() {
                 type="button"
                 onClick={() => {
                   if (a.id === "alert-1") {
-                    advanceDemo();
+                    advanceTour();
                     completeStep("signal");
                   }
                   router.push(a.href);

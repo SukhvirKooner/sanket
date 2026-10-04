@@ -23,7 +23,7 @@ export const dataSources = [
   { name: "NSDC Centre Registry", type: "PUBLIC", lastSync: "2026-09-27 22:00", health: "Healthy" },
   { name: "Employer MoU Feed", type: "PARTNER", lastSync: "2026-09-28 08:15", health: "Degraded" },
   { name: "Job Board Aggregator", type: "PARTNER", lastSync: "2026-09-28 07:00", health: "Healthy" },
-  { name: "Demo Workforce Graph", type: "SYNTHETIC", lastSync: "2026-09-28 00:00", health: "Healthy" },
+  { name: "Workforce Graph (synthetic)", type: "SYNTHETIC", lastSync: "2026-09-28 00:00", health: "Healthy" },
 ];
 
 export const modelVersions = [
@@ -31,7 +31,7 @@ export const modelVersions = [
   { version: "Demand Model v0.4", accuracy: "78%", status: "Active", notes: "Current production" },
   { version: "Demand Model v0.3", accuracy: "74%", status: "Retired", notes: "Superseded Aug 2026" },
   { version: "Capability Matcher v1.2", accuracy: "81%", status: "Active", notes: "Skill ontology aligned" },
-  { version: "Activation Optimizer v0.4", accuracy: "—", status: "Active", notes: "MILP demo simulator" },
+  { version: "Activation Optimizer v0.4", accuracy: "—", status: "Active", notes: "MILP simulator" },
 ];
 
 export const skillOntology = [

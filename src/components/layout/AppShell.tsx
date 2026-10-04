@@ -55,7 +55,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             </div>
           </main>
           <footer className="flex items-center justify-between border-t border-slate-200 bg-white px-4 py-2 text-[11px] text-slate-500">
-            <span>SANKET · Workforce Command Centre · Demo build</span>
+            <span>SANKET · Workforce Command Centre · Pilot build</span>
             <SyntheticFooterBadge />
           </footer>
         </div>

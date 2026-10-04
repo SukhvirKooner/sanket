@@ -29,7 +29,7 @@ export default function ActivationPage() {
   const plans = useAppStore((s) => s.plans);
   const updatePlan = useAppStore((s) => s.updatePlan);
   const completeStep = useAppStore((s) => s.completeStep);
-  const advanceDemo = useAppStore((s) => s.advanceDemo);
+  const advanceTour = useAppStore((s) => s.advanceTour);
   const openEvidence = useAppStore((s) => s.openEvidence);
   const modelVersion = useAppStore((s) => s.modelVersion);
   const addAudit = useAppStore((s) => s.addAudit);
@@ -67,7 +67,7 @@ export default function ActivationPage() {
             setOptimizing(false);
             setGenerated(true);
             completeStep("activation");
-            advanceDemo();
+            advanceTour();
             updatePlan(plan.id, {
               status: "Draft",
               allocations: defaultAllocations,

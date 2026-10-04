@@ -13,7 +13,7 @@ import type {
   ScenarioParams,
 } from "@/types";
 import type { Locale } from "@/lib/i18n";
-import { DEMO_USERS } from "@/lib/roles";
+import { ROLE_USERS } from "@/lib/roles";
 import { seedPlans } from "@/data/plans";
 import { economicEvents } from "@/data/events";
 import { uid, nowISO } from "@/lib/utils";
@@ -33,11 +33,11 @@ interface AppState {
   toggleSidebar: () => void;
   stepperCollapsed: boolean;
   toggleStepper: () => void;
-  guidedDemo: boolean;
-  setGuidedDemo: (v: boolean) => void;
-  demoStep: number;
-  setDemoStep: (n: number) => void;
-  advanceDemo: () => void;
+  guidedTour: boolean;
+  setGuidedTour: (v: boolean) => void;
+  tourStep: number;
+  setTourStep: (n: number) => void;
+  advanceTour: () => void;
 
   // Model
   modelVersion: string;
@@ -109,7 +109,7 @@ export const WORKFLOW_STEPS: { id: WorkflowStep; label: string; href: string }[]
   { id: "recalibration", label: "Recalibration", href: "/outcomes" },
 ];
 
-export const DEMO_STEPS = [
+export const TOUR_STEPS = [
   { title: "Start at Control Room", href: "/control-room", hint: "Open the Gujarat semiconductor alert" },
   { title: "Open Economic Signals", href: "/signals", hint: "Analyse the Semiconductor Fabrication Facility" },
   { title: "Review Event Analysis", href: "/signals/evt-semiconductor", hint: "Open Why this forecast?" },
@@ -130,38 +130,38 @@ export const useAppStore = create<AppState>()(
       isAuthenticated: false,
       user: null,
       login: (role, email) => {
-        const demo = DEMO_USERS[role];
+        const profile = ROLE_USERS[role];
         const user: User = {
           id: `user-${role}`,
-          name: demo.name,
-          email: email || demo.email,
+          name: profile.name,
+          email: email || profile.email,
           role,
-          org: demo.org,
+          org: profile.org,
         };
         set({ isAuthenticated: true, user });
         get().addAudit({
           action: "Login",
-          detail: `Signed in as ${demo.name} (${role})`,
+          detail: `Signed in as ${profile.name} (${role})`,
           category: "login",
-          user: demo.name,
+          user: profile.name,
           role,
         });
       },
       logout: () => set({ isAuthenticated: false, user: null }),
       switchRole: (role) => {
-        const demo = DEMO_USERS[role];
+        const profile = ROLE_USERS[role];
         set({
           user: {
             id: `user-${role}`,
-            name: demo.name,
-            email: demo.email,
+            name: profile.name,
+            email: profile.email,
             role,
-            org: demo.org,
+            org: profile.org,
           },
         });
         get().addAudit({
           action: "Role switch",
-          detail: `Switched demo role to ${role}`,
+          detail: `Switched role to ${role}`,
           category: "login",
         });
       },
@@ -172,11 +172,11 @@ export const useAppStore = create<AppState>()(
       toggleSidebar: () => set((s) => ({ sidebarCollapsed: !s.sidebarCollapsed })),
       stepperCollapsed: false,
       toggleStepper: () => set((s) => ({ stepperCollapsed: !s.stepperCollapsed })),
-      guidedDemo: false,
-      setGuidedDemo: (v) => set({ guidedDemo: v }),
-      demoStep: 0,
-      setDemoStep: (n) => set({ demoStep: n }),
-      advanceDemo: () => set((s) => ({ demoStep: Math.min(s.demoStep + 1, DEMO_STEPS.length - 1) })),
+      guidedTour: false,
+      setGuidedTour: (v) => set({ guidedTour: v }),
+      tourStep: 0,
+      setTourStep: (n) => set({ tourStep: n }),
+      advanceTour: () => set((s) => ({ tourStep: Math.min(s.tourStep + 1, TOUR_STEPS.length - 1) })),
 
       modelVersion: "Demand Model v0.4",
       setModelVersion: (v) => set({ modelVersion: v }),
@@ -261,7 +261,7 @@ export const useAppStore = create<AppState>()(
         })),
     }),
     {
-      name: "sanket-demo-store",
+      name: "sanket-app-store",
       partialize: (s) => ({
         isAuthenticated: s.isAuthenticated,
         user: s.user,
@@ -271,8 +271,8 @@ export const useAppStore = create<AppState>()(
         plans: s.plans,
         events: s.events,
         auditLog: s.auditLog,
-        guidedDemo: s.guidedDemo,
-        demoStep: s.demoStep,
+        guidedTour: s.guidedTour,
+        tourStep: s.tourStep,
         activationPlanCount: s.activationPlanCount,
         revealedWorkers: s.revealedWorkers,
         savedScenarios: s.savedScenarios,

@@ -37,7 +37,6 @@
 		BE2E2D4543C848B65CF20DF6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6651E6BE9000ED9490D260 /* HomeView.swift */; };
 		BFF7481AD1237E5D9061289F /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8A7C719D85D2685D277DA0 /* AppState.swift */; };
 		C70150C155749CD2AD2272B0 /* SkillProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09416655B159FDA78935AF6 /* SkillProgressView.swift */; };
-		C792E9B168429B6FFD8A65E1 /* DemoControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EF50CD27067EC95D2F74C5 /* DemoControlsView.swift */; };
 		C9B67BBE524E61A7A7E7FCBC /* SkillMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68F1378A86B5B1DF9062467 /* SkillMapView.swift */; };
 		CEBB7C6E673D5652F237C1A6 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B7670EABE28B37B35672A /* PrimaryButton.swift */; };
 		D49A3003A1F9AB11D1EEA607 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 773FD9C240874598210A4175 /* Localizable.xcstrings */; };
@@ -47,6 +46,7 @@
 		E9A0905CEDE456E96EAE4C02 /* TrainingRecommendationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F81CD93017BE6271C524D4 /* TrainingRecommendationView.swift */; };
 		F27BCC016B279F6F7F976983 /* WorkforceOutcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D70B617D405AD9296C7D6D /* WorkforceOutcomeView.swift */; };
 		F9561C8FB2678919A06A6C4D /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F86655D336C203397FA454F /* ProfileView.swift */; };
+		FEA469EF5A074FA03CE1206F /* PresenterControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D892C816D8F9669AE117CCEA /* PresenterControlsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,7 +60,6 @@
 		316D63DF9DD9108AFD4A4906 /* TrainingCentresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingCentresView.swift; sourceTree = "<group>"; };
 		355B7D5248D6F8BC77780D53 /* WorkforceJourneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkforceJourneyView.swift; sourceTree = "<group>"; };
 		35B796E93F0FB3A5DE8432D6 /* SkillStatusBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillStatusBadge.swift; sourceTree = "<group>"; };
-		41EF50CD27067EC95D2F74C5 /* DemoControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoControlsView.swift; sourceTree = "<group>"; };
 		48D70B617D405AD9296C7D6D /* WorkforceOutcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkforceOutcomeView.swift; sourceTree = "<group>"; };
 		4B6651E6BE9000ED9490D260 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		50376211B9FC5096E459D5F5 /* TimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
@@ -88,6 +87,7 @@
 		C2F2419BAD232FB8F4313A44 /* OpportunitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpportunitiesView.swift; sourceTree = "<group>"; };
 		C33A7D84AE05A484DCC7B290 /* L10n.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L10n.swift; sourceTree = "<group>"; };
 		D36D87366C4BE7A4CDD21B90 /* TrainingHubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingHubView.swift; sourceTree = "<group>"; };
+		D892C816D8F9669AE117CCEA /* PresenterControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterControlsView.swift; sourceTree = "<group>"; };
 		DF957CA0A6CE1192E1E70FF0 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		E68F1378A86B5B1DF9062467 /* SkillMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillMapView.swift; sourceTree = "<group>"; };
 		F71208C78453827D18AD49DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -255,8 +255,8 @@
 		AE38820F7B04C2A60B03E1EC /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				41EF50CD27067EC95D2F74C5 /* DemoControlsView.swift */,
 				4B6651E6BE9000ED9490D260 /* HomeView.swift */,
+				D892C816D8F9669AE117CCEA /* PresenterControlsView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -363,7 +363,6 @@
 				BFF7481AD1237E5D9061289F /* AppState.swift in Sources */,
 				6DF6F14BA7051B60DC60B717 /* ApplicationsView.swift in Sources */,
 				0CA7BCF3679999BDEB01F5C9 /* CareerTransitionView.swift in Sources */,
-				C792E9B168429B6FFD8A65E1 /* DemoControlsView.swift in Sources */,
 				BD721131AC725DF57A688CA3 /* FitPercentView.swift in Sources */,
 				BE2E2D4543C848B65CF20DF6 /* HomeView.swift in Sources */,
 				DDC1C97F875644B4DE7B6324 /* Job.swift in Sources */,
@@ -378,6 +377,7 @@
 				B35C476FF6C8E57FF902574B /* OnboardingFlowView.swift in Sources */,
 				10F0943CBD0B85EEEC963DE7 /* OpportunitiesView.swift in Sources */,
 				4CB68E7D3B1E781C8F23A76C /* Opportunity.swift in Sources */,
+				FEA469EF5A074FA03CE1206F /* PresenterControlsView.swift in Sources */,
 				CEBB7C6E673D5652F237C1A6 /* PrimaryButton.swift in Sources */,
 				F9561C8FB2678919A06A6C4D /* ProfileView.swift in Sources */,
 				33A24E2CB37951D19DF140CC /* RadarChartView.swift in Sources */,

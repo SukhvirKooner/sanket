@@ -23,14 +23,14 @@ import { formatNumber } from "@/lib/formatters";
 
 export default function ImplementationPage() {
   const completeStep = useAppStore((s) => s.completeStep);
-  const advanceDemo = useAppStore((s) => s.advanceDemo);
+  const advanceTour = useAppStore((s) => s.advanceTour);
   const plans = useAppStore((s) => s.plans);
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState<Awaited<ReturnType<typeof api.getImplementation>> | null>(null);
 
   useEffect(() => {
     completeStep("monitoring");
-    advanceDemo();
+    advanceTour();
     api.getImplementation().then((d) => {
       setData(d);
       setLoading(false);

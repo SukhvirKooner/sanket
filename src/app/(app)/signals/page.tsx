@@ -34,7 +34,7 @@ function SignalsContent() {
   const setSelectedEventId = useAppStore((s) => s.setSelectedEventId);
   const completeStep = useAppStore((s) => s.completeStep);
   const role = useAppStore((s) => s.user?.role);
-  const advanceDemo = useAppStore((s) => s.advanceDemo);
+  const advanceTour = useAppStore((s) => s.advanceTour);
 
   const [loading, setLoading] = useState(true);
   const [events, setEvents] = useState<EconomicEvent[]>([]);
@@ -130,7 +130,7 @@ function SignalsContent() {
                   onClick={() => {
                     setSelectedEventId(e.id);
                     completeStep("signal");
-                    if (e.id === "evt-semiconductor") advanceDemo();
+                    if (e.id === "evt-semiconductor") advanceTour();
                     router.push(`/signals/${e.id}`);
                   }}
                 >

@@ -98,7 +98,7 @@ export function canAct(role: Role, action: string): boolean {
   return ROLE_ACTIONS[role][action] ?? false;
 }
 
-export const DEMO_USERS: Record<Role, { name: string; email: string; org: string }> = {
+export const ROLE_USERS: Record<Role, { name: string; email: string; org: string }> = {
   government_planner: {
     name: "Ananya Sharma",
     email: "ananya.sharma@msde.gov.in",

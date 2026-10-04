@@ -17,7 +17,7 @@ import { SyntheticFooterBadge } from "@/components/shared/Badges";
 export default function CapabilityPage() {
   const router = useRouter();
   const completeStep = useAppStore((s) => s.completeStep);
-  const advanceDemo = useAppStore((s) => s.advanceDemo);
+  const advanceTour = useAppStore((s) => s.advanceTour);
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState<Awaited<ReturnType<typeof api.getCapability>> | null>(null);
   const [districtWorkers, setDistrictWorkers] = useState<Worker[] | null>(null);
@@ -102,7 +102,7 @@ export default function CapabilityPage() {
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="all">All {f}</SelectItem>
-                      <SelectItem value="f1">Filter demo</SelectItem>
+                      <SelectItem value="f1">Sample filter</SelectItem>
                     </SelectContent>
                   </Select>
                 )
@@ -162,7 +162,7 @@ export default function CapabilityPage() {
                   type="button"
                   className="flex w-full items-center justify-between rounded-md border border-slate-200 px-3 py-2 text-left text-sm hover:bg-slate-50"
                   onClick={() => {
-                    advanceDemo();
+                    advanceTour();
                     router.push(`/workers/${w.id}`);
                   }}
                 >

@@ -3,8 +3,8 @@ export type Locale = "en" | "hi";
 const dict = {
   appName: { en: "SANKET · Workforce Command Centre", hi: "संकेत · कार्यबल कमांड सेंटर" },
   ministry: {
-    en: "Ministry of Skill Development & Entrepreneurship (Demo)",
-    hi: "कौशल विकास और उद्यमिता मंत्रालय (डेमो)",
+    en: "Ministry of Skill Development & Entrepreneurship",
+    hi: "कौशल विकास और उद्यमिता मंत्रालय",
   },
   controlRoom: { en: "Control Room", hi: "कंट्रोल रूम" },
   economicSignals: { en: "Economic Signals", hi: "आर्थिक संकेत" },
@@ -28,10 +28,10 @@ const dict = {
   activePlans: { en: "Active plans", hi: "सक्रिय योजनाएँ" },
   forecastConfidence: { en: "Forecast confidence", hi: "पूर्वानुमान विश्वास" },
   workflowProgress: { en: "Workflow progress", hi: "कार्यप्रवाह प्रगति" },
-  guidedDemo: { en: "Guided demo", hi: "मार्गदर्शित डेमो" },
+  guidedTour: { en: "Guided tour", hi: "मार्गदर्शित टूर" },
   logout: { en: "Log out", hi: "लॉग आउट" },
   switchRole: { en: "Switch role", hi: "भूमिका बदलें" },
-  syntheticBadge: { en: "SYNTHETIC DATA · Demo", hi: "सिंथेटिक डेटा · डेमो" },
+  syntheticBadge: { en: "SYNTHETIC DATA", hi: "सिंथेटिक डेटा" },
   notPermitted: { en: "Not permitted for your role", hi: "आपकी भूमिका के लिए अनुमति नहीं" },
   geography: { en: "Geography", hi: "भूगोल" },
   sector: { en: "Sector", hi: "क्षेत्र" },

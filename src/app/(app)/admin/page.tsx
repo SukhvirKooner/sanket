@@ -320,7 +320,7 @@ export default function AdminPage() {
           <Card>
             <CardContent className="space-y-3 p-4 text-sm">
               <div className="flex items-center justify-between rounded border border-slate-200 px-3 py-2">
-                <span>Demo mode (synthetic data badge)</span>
+                <span>Pilot mode (synthetic data badge)</span>
                 <Switch defaultChecked />
               </div>
               <div className="flex items-center justify-between rounded border border-slate-200 px-3 py-2">
@@ -328,10 +328,10 @@ export default function AdminPage() {
                 <Switch defaultChecked />
               </div>
               <div className="flex items-center justify-between rounded border border-slate-200 px-3 py-2">
-                <span>Guided demo coach-marks</span>
+                <span>Guided tour coach-marks</span>
                 <Switch defaultChecked />
               </div>
-              <p className="text-xs text-slate-500">Environment: sanket-demo · Region: India</p>
+              <p className="text-xs text-slate-500">Environment: sanket-pilot · Region: India</p>
             </CardContent>
           </Card>
         </TabsContent>

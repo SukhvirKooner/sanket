@@ -1,13 +1,13 @@
 import SwiftUI
 
-struct DemoControlsView: View {
+struct PresenterControlsView: View {
     @Environment(AppState.self) private var appState
     @Environment(\.dismiss) private var dismiss
 
     var body: some View {
         NavigationStack {
             List {
-                Section(String(localized: "demo_jump_stage")) {
+                Section(String(localized: "presenter_jump_stage")) {
                     ForEach(JourneyStage.allCases) { stage in
                         Button {
                             appState.jumpToStage(stage)
@@ -27,21 +27,21 @@ struct DemoControlsView: View {
                 }
 
                 Section {
-                    Button(String(localized: "demo_advance_application")) {
+                    Button(String(localized: "presenter_advance_application")) {
                         appState.advancePrimaryApplication()
                         dismiss()
                     }
-                    Button(String(localized: "demo_advance_training")) {
+                    Button(String(localized: "presenter_advance_training")) {
                         appState.advanceTrainingProgress()
                         dismiss()
                     }
-                    Button(String(localized: "demo_reset"), role: .destructive) {
-                        appState.resetDemo()
+                    Button(String(localized: "presenter_reset"), role: .destructive) {
+                        appState.resetJourney()
                         dismiss()
                     }
                 }
             }
-            .navigationTitle(String(localized: "demo_controls_title"))
+            .navigationTitle(String(localized: "presenter_controls_title"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {

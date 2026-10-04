@@ -81,7 +81,7 @@ export function StatusPill({ status }: { status: PlanStatus }) {
 export function SyntheticFooterBadge() {
   return (
     <span className="inline-flex items-center rounded border border-dashed border-saffron/60 bg-saffron/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-saffron-dark">
-      SYNTHETIC DATA · Demo
+      SYNTHETIC DATA
     </span>
   );
 }

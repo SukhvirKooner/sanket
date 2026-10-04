@@ -115,7 +115,7 @@ export default function CreateEventPage() {
           steps={ANALYSE_STEPS}
           onComplete={() => {
             completeStep("demand");
-            // For demo consistency, route to semiconductor analysis
+            // For journey consistency, route to semiconductor analysis
             router.push("/signals/evt-semiconductor");
           }}
         />
@@ -152,7 +152,7 @@ export default function CreateEventPage() {
             ) : (
               <>
                 <Upload className="mb-2 h-6 w-6 text-slate-400" />
-                Drag & drop MoU / DPR (or click) — demo will AI-extract 7 fields
+                Drag & drop MoU / DPR (or click) — the extractor will AI-extract 7 fields
               </>
             )}
           </button>

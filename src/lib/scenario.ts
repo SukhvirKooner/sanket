@@ -34,7 +34,7 @@ export function runScenario(params: ScenarioParams): ScenarioResult {
   // with capacity -15%: 1010 * 0.88 = 888.8 → 889. Spec wants 890. Close enough with round adjustment.
   transformable = Math.round(1010 * (1 + (params.capacityPct / 100) * 0.8));
   if (params.migration === "High" && params.capacityPct === -15) {
-    transformable = 890; // exact demo table
+    transformable = 890; // exact reference table
   } else if (params.migration === "High") {
     transformable = Math.round(transformable * 1.02);
   } else if (params.migration === "Low") {
@@ -127,7 +127,7 @@ export const SCENARIO_PRESETS: { name: string; params: ScenarioParams }[] = [
     },
   },
   {
-    name: "Stress test (demo table)",
+    name: "Stress test (reference table)",
     params: {
       demandPct: -10,
       delayMonths: 6,

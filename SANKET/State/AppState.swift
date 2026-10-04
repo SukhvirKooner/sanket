@@ -39,12 +39,12 @@ final class AppState {
 
     var opportunityFilter: OpportunityFilter = .all
 
-    // Navigation helpers for demo flow
+    // Navigation helpers
     var showProfile = false
     var pendingHomeDestination: HomeDestination?
 
     init() {
-        applyLaunchDemoStageIfNeeded()
+        applyLaunchJourneyStageIfNeeded()
     }
 
     enum OpportunityFilter: String, CaseIterable, Identifiable {
@@ -234,7 +234,7 @@ final class AppState {
                 // keep as soft signal only
             }
         }
-        // Apply PLC / Automation from demo defaults if answered
+        // Apply PLC / Automation from assessment defaults if answered
         if let plc = results.first(where: { $0.skillName == "PLC" }),
            let idx = skills.firstIndex(where: { $0.id == "plc" }) {
             skills[idx].scoreOutOfTen = plc.scoreOutOfTen
@@ -319,7 +319,7 @@ final class AppState {
         }
         if journeyStage == .certified {
             journeyStage = .applied
-            // Demo: primary app becomes shortlisted shortly for home card
+            // Primary app becomes shortlisted for home card
             if let idx = applications.firstIndex(where: { $0.jobId == "pragati-ev" }) {
                 applications[idx].status = .shortlisted
                 applications[idx].isPrimary = true
@@ -410,24 +410,24 @@ final class AppState {
         }
     }
 
-    func resetDemo() {
+    func resetJourney() {
         jumpToStage(.onboarding)
         language = .english
         shareProfileWithEmployers = true
         useProfileForTrainingRecs = true
     }
 
-    /// Silent stage jump for automation / recording (no demo-controls UI).
-    /// Launch: `-DemoStage certified` or URL: `sanket://stage/certified`
-    func applyLaunchDemoStageIfNeeded() {
+    /// Silent stage jump for automation / recording.
+    /// Launch: `-JourneyStage certified` or URL: `sanket://stage/certified`
+    func applyLaunchJourneyStageIfNeeded() {
         let args = ProcessInfo.processInfo.arguments
-        if let idx = args.firstIndex(of: "-DemoStage"), args.indices.contains(idx + 1),
+        if let idx = args.firstIndex(of: "-JourneyStage"), args.indices.contains(idx + 1),
            let stage = JourneyStage(rawValue: args[idx + 1]) {
             jumpToStage(stage)
         }
     }
 
-    func handleDemoURL(_ url: URL) {
+    func handleJourneyURL(_ url: URL) {
         guard url.scheme == "sanket" else { return }
         if url.host == "stage" {
             let name = url.pathComponents.filter { $0 != "/" }.first ?? url.lastPathComponent

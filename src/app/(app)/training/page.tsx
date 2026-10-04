@@ -38,7 +38,7 @@ function TrainingContent() {
   const params = useSearchParams();
   const highlight = params.get("highlight");
   const completeStep = useAppStore((s) => s.completeStep);
-  const advanceDemo = useAppStore((s) => s.advanceDemo);
+  const advanceTour = useAppStore((s) => s.advanceTour);
   const role = useAppStore((s) => s.user?.role ?? "government_planner");
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState<Awaited<ReturnType<typeof api.getTraining>> | null>(null);
@@ -47,7 +47,7 @@ function TrainingContent() {
 
   useEffect(() => {
     completeStep("training");
-    advanceDemo();
+    advanceTour();
     api.getTraining().then((d) => {
       setData(d);
       setCentres(d.centres);
@@ -128,7 +128,7 @@ function TrainingContent() {
                             setCentres((prev) =>
                               prev.map((x) => (x.id === c.id ? { ...x, seats } : x))
                             );
-                            toast.message("Seats updated (demo)");
+                            toast.message("Seats updated");
                           }}
                         />
                       ) : (

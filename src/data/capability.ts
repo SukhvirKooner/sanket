@@ -134,7 +134,7 @@ export const workers: Worker[] = [
     consent: { shareWithEmployers: false, trainingRecommendations: true },
     meta: {
       sourceType: "SYNTHETIC",
-      sourceName: "Demo Workforce Graph",
+      sourceName: "Workforce Graph (synthetic)",
       timestamp: "2026-09-10T08:00:00+05:30",
       dataVersion: "dv-2026.09",
       confidence: 70,

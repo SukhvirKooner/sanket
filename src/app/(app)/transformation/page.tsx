@@ -28,7 +28,7 @@ function TransformationContent() {
   const params = useSearchParams();
   const completeStep = useAppStore((s) => s.completeStep);
   const incrementPlanItems = useAppStore((s) => s.incrementPlanItems);
-  const advanceDemo = useAppStore((s) => s.advanceDemo);
+  const advanceTour = useAppStore((s) => s.advanceTour);
   const addAudit = useAppStore((s) => s.addAudit);
   const openEvidence = useAppStore((s) => s.openEvidence);
   const modelVersion = useAppStore((s) => s.modelVersion);
@@ -234,7 +234,7 @@ function TransformationContent() {
                 onClick={() => {
                   incrementPlanItems();
                   completeStep("transformation");
-                  advanceDemo();
+                  advanceTour();
                   addAudit({
                     action: "Added to activation plan",
                     detail: `${from} → ${to} via ${p.label}`,

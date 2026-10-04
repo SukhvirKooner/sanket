@@ -1531,41 +1531,41 @@
         }
       }
     },
-    "demo_data_label": {
+    "sample_data_label": {
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Demo data – synthetic"
+            "value": "Sample data – synthetic"
           }
         },
         "hi": {
           "stringUnit": {
             "state": "translated",
-            "value": "डेमो डेटा – सिंथेटिक"
+            "value": "नमूना डेटा – सिंथेटिक"
           }
         }
       }
     },
-    "demo_controls_title": {
+    "presenter_controls_title": {
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Demo controls"
+            "value": "Presenter controls"
           }
         },
         "hi": {
           "stringUnit": {
             "state": "translated",
-            "value": "डेमो नियंत्रण"
+            "value": "प्रस्तोता नियंत्रण"
           }
         }
       }
     },
-    "demo_jump_stage": {
+    "presenter_jump_stage": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -1582,7 +1582,7 @@
         }
       }
     },
-    "demo_advance_application": {
+    "presenter_advance_application": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -1599,7 +1599,7 @@
         }
       }
     },
-    "demo_advance_training": {
+    "presenter_advance_training": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -1616,19 +1616,19 @@
         }
       }
     },
-    "demo_reset": {
+    "presenter_reset": {
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Reset demo"
+            "value": "Reset journey"
           }
         },
         "hi": {
           "stringUnit": {
             "state": "translated",
-            "value": "डेमो रीसेट करें"
+            "value": "यात्रा रीसेट करें"
           }
         }
       }
@@ -3509,13 +3509,13 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Thanks. Your update was saved for this demo."
+            "value": "Thanks. Your update was saved."
           }
         },
         "hi": {
           "stringUnit": {
             "state": "translated",
-            "value": "धन्यवाद। आपका अपडेट इस डेमो के लिए सहेजा गया।"
+            "value": "धन्यवाद। आपका अपडेट सहेजा गया।"
           }
         }
       }

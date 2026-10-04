@@ -38,7 +38,7 @@ next-env.d.ts
 **/DerivedData/
 *.xcuserstate
 
-# Demo archives / oversized local takes (keep final walkthrough)
-/Demo/archive/
-/demos/raw/
-/demos/*.webm
+# Walkthrough archives / oversized local takes
+/Walkthrough/archive/
+/recordings/raw/
+/recordings/*.webm

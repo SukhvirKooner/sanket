@@ -94,12 +94,12 @@ STRINGS = {
     "privacy_share_employers": ("Share profile with employers", "नियोक्ताओं के साथ प्रोफ़ाइल साझा करें"),
     "privacy_training_recs": ("Use profile for training recommendations", "प्रशिक्षण सिफ़ारिशों के लिए प्रोफ़ाइल उपयोग करें"),
     "privacy_note": ("You control who sees your profile.", "आप तय करते हैं कि आपकी प्रोफ़ाइल कौन देखे।"),
-    "demo_data_label": ("Demo data – synthetic", "डेमो डेटा – सिंथेटिक"),
-    "demo_controls_title": ("Demo controls", "डेमो नियंत्रण"),
-    "demo_jump_stage": ("Jump to stage", "चरण पर जाएँ"),
-    "demo_advance_application": ("Advance main application", "मुख्य आवेदन आगे बढ़ाएँ"),
-    "demo_advance_training": ("Advance training progress", "प्रशिक्षण प्रगति बढ़ाएँ"),
-    "demo_reset": ("Reset demo", "डेमो रीसेट करें"),
+    "sample_data_label": ("Sample data – synthetic", "नमूना डेटा – सिंथेटिक"),
+    "presenter_controls_title": ("Presenter controls", "प्रस्तोता नियंत्रण"),
+    "presenter_jump_stage": ("Jump to stage", "चरण पर जाएँ"),
+    "presenter_advance_application": ("Advance main application", "मुख्य आवेदन आगे बढ़ाएँ"),
+    "presenter_advance_training": ("Advance training progress", "प्रशिक्षण प्रगति बढ़ाएँ"),
+    "presenter_reset": ("Reset journey", "यात्रा रीसेट करें"),
     "journey_title": ("My Workforce Journey", "मेरी कार्यबल यात्रा"),
     "journey_intro": ("Where you started and how far you have come.", "आप कहाँ से शुरू हुए और कितनी दूर आए।"),
     "journey_started": ("Starting point", "प्रारंभ बिंदु"),
@@ -210,7 +210,7 @@ STRINGS = {
     "outcome_wage": ("Wage band", "वेतन बैंड"),
     "outcome_still_working": ("Still working after 3 months?", "3 महीने बाद भी काम कर रहे हैं?"),
     "outcome_consent_note": ("This helps improve recommendations for other workers. You can skip.", "इससे अन्य कामगारों के लिए सिफ़ारिशें बेहतर होती हैं। आप छोड़ सकते हैं।"),
-    "outcome_thanks": ("Thanks. Your update was saved for this demo.", "धन्यवाद। आपका अपडेट इस डेमो के लिए सहेजा गया।"),
+    "outcome_thanks": ("Thanks. Your update was saved.", "धन्यवाद। आपका अपडेट सहेजा गया।"),
 }
 
 def unit(value):

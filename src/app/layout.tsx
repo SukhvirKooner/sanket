@@ -17,7 +17,7 @@ const notoDevanagari = Noto_Sans_Devanagari({
 export const metadata: Metadata = {
   title: "SANKET · Workforce Command Centre",
   description:
-    "AI-enabled Workforce Intelligence & Activation Engine for India — Demo",
+    "AI-enabled Workforce Intelligence & Activation Engine for India — Workforce Command Centre",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

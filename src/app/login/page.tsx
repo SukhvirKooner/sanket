@@ -31,7 +31,7 @@ export default function LoginPage() {
   const router = useRouter();
   const login = useAppStore((s) => s.login);
   const [email, setEmail] = useState("ananya.sharma@msde.gov.in");
-  const [password, setPassword] = useState("demo");
+  const [password, setPassword] = useState("sanket");
   const [role, setRole] = useState<Role>("government_planner");
 
   const doLogin = (r: Role = role) => {
@@ -77,7 +77,7 @@ export default function LoginPage() {
           </div>
 
           <div className="text-xs text-slate-400">
-            Ministry of Skill Development & Entrepreneurship · Demo
+            Ministry of Skill Development & Entrepreneurship
           </div>
         </div>
       </div>
@@ -86,7 +86,7 @@ export default function LoginPage() {
         <Card className="mx-auto w-full max-w-md">
           <CardHeader>
             <CardTitle className="text-xl">Sign in</CardTitle>
-            <p className="text-xs text-slate-500">Any credentials work · Demo authentication</p>
+            <p className="text-xs text-slate-500">Any credentials work · Pilot authentication</p>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="space-y-1.5">
@@ -123,7 +123,7 @@ export default function LoginPage() {
 
             <div className="pt-2">
               <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
-                Quick demo login
+                Quick login
               </p>
               <div className="grid grid-cols-2 gap-2">
                 {QUICK.map(({ role: r, icon: Icon, desc }) => (
@@ -146,7 +146,7 @@ export default function LoginPage() {
           </CardContent>
         </Card>
         <p className="mt-6 text-center text-[11px] text-slate-500">
-          Synthetic data · Demo build · Ministry of Skill Development & Entrepreneurship
+          Synthetic data · Pilot build · Ministry of Skill Development & Entrepreneurship
         </p>
       </div>
     </div>
