@@ -27,10 +27,7 @@ Control Room → Economic Signals → Event Analysis → Capability → Worker �
 
 ## iOS worker app
 
-The worker-facing iOS app lives in a separate repository:
-
-https://github.com/SukhvirKooner/sanket-worker-ios
-
+The worker-facing iOS app lives in [sanket-worker-ios](https://github.com/SukhvirKooner/sanket-worker-ios).
 
 ## Record a walkthrough
 
